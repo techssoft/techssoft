@@ -1,0 +1,242 @@
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- FontAwesome if not added in base.html -->
+
+<!--===== HERO AREA STARTS =======-->
+<div class="inner-page-hero-area" style="background-image: url({% static 'website/img/all-images/bg/hero-bg1.png' %}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <img src="{% static 'website/img/elements/elements5.png' %}" alt="" class="elements5">
+    <img src="{% static 'website/img/elements/elements4.png' %}" alt="" class="elements4">
+    <img src="{% static 'website/img/elements/elements1.png' %}" alt="" class="elements1 keyframe5">
+    <img src="{% static 'website/img/elements/elements16.png' %}" alt="" class="elements16">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="inner-header text-center heading1">
+                    <h1>Industries</h1>
+                    <div class="space28"></div>
+                    <a href="{% url 'index' %}">Home</a><a> <i class="fa-solid fa-angle-right"></i> <span>Industries</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== HERO AREA ENDS =======-->
+
+
+
+<div class="autoslide">
+  <div class="frames" id="frames"></div>
+</div>
+
+
+
+<!--===== BLOG AREA STARTS =======-->
+<div class="vl-blog-4-area-inner sp1">
+  <div class="container">
+     <div class="row">
+
+
+      <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+              <img src="{% static 'website/img/Textiles.jpg' %}" alt="" style="height: 320px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;" >
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a >Textiles</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >Textile industry encompasses all aspects of transforming raw materials into fabrics, clothing, and other textile-based products.</a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+            <img src="{% static 'website/img/healthcare.webp' %}" alt=" " style="height: 320px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a >HealthCare</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;" ><a >The healthcare industry encompasses all businesses and organizations involved in providing medical services, products, and information to maintain and improve health.</a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+            <img src="{% static 'website/img/banking-finance.jpg' %}" alt="" style="height: 320px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a >Banking </a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >The banking industry includes systems of financial institutions called banks that help people store and use their money.</a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+              <img src="{% static 'website/img/gasoil.jpg' %}" alt=""   style="height: 320px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a >Oil and Gas Industries</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >The oil and gas industry is a major global sector focused on the exploration, extraction, refining, and distribution of crude oil and natural gas.</a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+            <img src="{% static 'website/img/automotive-industry.webp' %}" alt="" style="height: 320px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a > AutoMotive</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >The education industry encompasses the broad range of organizations and businesses that provide educational products and services.</a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+            <img src="{% static 'website/img/ecommerce.png' %}" alt="" style="height:320px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a > Ecommerce</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >Businesses can build their own ecommerce website, set up an ecommerce storefront on an established selling site.</a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+              <img src="{% static 'website/img/telecom.webp' %}" alt="" style="height: 320px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a > TeleCommunication</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >The telecommunications industry involves the transmission and reception of information over distances, encompassing technologies like the internet.</a></h4>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+            <img src="{% static 'website/img/agriculture.jpg' %}" alt="" style="height: 320px;width:450px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>   
+                <li><a >Agriculture</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >The agriculture industry encompasses all activities related to the production, processing, and distribution of food and other agricultural products. </a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="">
+            <img src="{% static 'website/img/all-images/blog/blog-img16.png' %}" alt="" style="height: 320px;width:450px;">
+           </div>
+           <div class="vl-blog-1-content" style="margin-top:-70px;">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a >Education</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h5 class="vl-blog-1-title" style="text-align: justify;color:#212529;"><a >The education industry encompasses the broad range of organizations and businesses that provide educational products and services.</a></h5>
+            <div class="space20"></div>
+            
+         </div>
+        </div>
+     </div>
+
+     {% comment %} <div class="col-lg-12">
+        <div class="space30"></div>
+        <div class="pagination-area">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link"  aria-label="Previous">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link active" >1</a></li>
+                  <li class="page-item"><a class="page-link" >2</a></li>
+                  <li class="page-item"><a class="page-link" >3</a></li>
+                  <li class="page-item"><a class="page-link" >...</a></li>
+                  <li class="page-item"><a class="page-link" >12</a></li>
+                  <li class="page-item">
+                    <a class="page-link m-0"  aria-label="Next">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+    </div> {% endcomment %}
+     </div>
+  </div>
+</div>
+<!--===== BLOG AREA ENDS =======-->
+
+
+
+{% endblock content %}

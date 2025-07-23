@@ -1,0 +1,187 @@
+{% extends 'website/base.html' %} {% load static %} {% block content %}
+
+<!--===== HERO AREA STARTS =======-->
+<div
+  class="inner-page-hero-area"
+  style="
+    background-image: url({%static'website/img/all-images/bg/hero-bg1.png'%});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  "
+>
+  <img
+    src="{% static 'website/img/elements/elements5.png' %}"
+    alt=""
+    class="elements5"
+  />
+  <img
+    src="{% static 'website/img/elements/elements4.png' %}"
+    alt=""
+    class="elements4"
+  />
+  <img
+    src="{% static 'website/img/elements/elements1.png' %}"
+    alt=""
+    class="elements1 keyframe5"
+  />
+  <img
+    src="{% static 'website/img/elements/elements16.png' %}"
+    alt=""
+    class="elements16"
+  />
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 m-auto">
+        <div class="inner-header text-center heading1">
+          <h1>Careers</h1>
+          <div class="space28"></div>
+          <a href="{% url 'index' %}"
+            >Home <i class="fa-solid fa-angle-right"></i>
+            <span>Careers</span></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== HERO AREA ENDS =======-->
+
+<!--===== CONTACT AREA STARTS =======-->
+<div class="contact-inner-area sp1">
+  <div class="container">
+    <div class="row">
+      {% if messages %} {% for message in messages %}
+      <div
+        class="alert {{ message.tags }} alert-dismissible fade show"
+        role="alert"
+      >
+        {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} {% endif %}
+      <div class="col-lg-10 m-auto">
+        <div class="heading2 text-center">
+          <div class="space20"></div>
+          <h2>Apply for a Job</h2>
+        </div>
+        <div class="space40"></div>
+        <div class="row">
+          <div class="col-12">
+            Creating a friendly, independent and remote culture is essential to
+            our work and we are always looking for the best professionals. You
+            may need to complete an application form. Be sure to you are
+            applicable for Essential Eligibility & Skills needed by the company
+            when submitting your profile.
+          </div>
+        </div>
+        <div class="space60"></div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="img1 reveal image-anime">
+              <img
+                src="{% static 'website/img/all-images/others/others-img2.png' %}"
+                alt=""
+                style="height: 560px"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="contact-author-boxarea">
+              <h3>Get In Touch Now</h3>
+              <div class="space8"></div>
+              <form method="post" action="{% url 'careers' %}">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email*"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input
+                        type="number"
+                        placeholder="Phone Number*"
+                        name="phone"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input
+                        type="text"
+                        name="location"
+                        placeholder="Location*"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input
+                        type="text"
+                        name="position"
+                        placeholder="Position apply for"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-area">
+                      <input type="file" name="resume" placeholder="resume" />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                    <div class="input-area">
+                      <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="space32"></div>
+                    <div class="input-area">
+                      <button type="submit" class="vl-btn2">
+                        Apply Now <i class="fa-solid fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== CONTACT AREA ENDS =======-->
+
+{% endblock content %}

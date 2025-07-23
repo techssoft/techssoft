@@ -1,0 +1,439 @@
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+     .autoslide {
+     width:100%;
+      height:100vh;
+      padding:50px;
+      
+    }
+
+    .frames {
+      width: 100%;
+      height: 30vw;
+      
+      margin-top: 150px;
+      position: relative;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    .frame {
+      position: absolute;
+      width: 20%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      opacity: 0;
+      transform: translate3d(0, 0, -200px);
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #f0f8ff;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .current-frame {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      z-index: 2;
+      box-shadow: 0 13px 25px rgba(0, 0, 0, 0.3), 0 11px 7px rgba(0, 0, 0, 0.19);
+    }
+
+    .next-frame {
+      transform: translate3d(50%, 0, -50px);
+      opacity: 0.7;
+      z-index: 0;
+    }
+    .second-next {
+      transform: translate3d(100%, 0, -200px);
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .prev-frame {
+      transform: translate3d(-50%, 0, -50px);
+      opacity: 0.7;
+      z-index: 1;
+    }
+   .second-prev {
+      transform: translate3d(-100%, 0, -200px);
+      opacity: 0.3;
+      z-index: 0;
+    }
+  </style>
+
+
+
+
+<!--===== HERO AREA STARTS =======-->
+<div class="inner-page-hero-area" style="background-image: url({% static 'website/img/all-images/bg/hero-bg1.png' %}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <img src="{% static 'website/img/elements/elements5.png' %}" alt="" class="elements5">
+    <img src="{% static 'website/img/elements/elements4.png' %}" alt="" class="elements4">
+    <img src="{% static 'website/img/elements/elements1.png' %}" alt="" class="elements1 keyframe5">
+    <img src="{% static 'website/img/elements/elements16.png' %}" alt="" class="elements16">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="inner-header text-center heading1">
+                    <h1>Industries</h1>
+                    <div class="space28"></div>
+                    <a href="{% url 'index' %}">Home</a><a> <i class="fa-solid fa-angle-right"></i> <span>Industries</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== HERO AREA ENDS =======-->
+
+
+
+<div class="autoslide">
+  <div class="frames" id="frames"></div>
+</div>
+
+
+
+<!--===== BLOG AREA STARTS =======-->
+<div class="vl-blog-4-area-inner sp1">
+  <div class="container">
+     <div class="row">
+
+
+      <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+              <img src="{% static 'website/img/all-images/blog/blog-img8.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#">Textiles</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Scalable IT solutions tailored to meet a unique business needs</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+            <img src="{% static 'website/img/all-images/blog/blog-img9.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#">HealthCare</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Unlock the full potential Best  your business with tailored IT</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+            <img src="{% static 'website/img/all-images/blog/blog-img10.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#">Banking </a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Optimize your operations with tailored IT services that grow</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+              <img src="{% static 'website/img/all-images/blog/blog-img11.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#">Oil and Gas Industries</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Unlock the Future of Your IT & Business With Best Innovative</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+            <img src="{% static 'website/img/all-images/blog/blog-img12.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#"> AutoMotive</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Transform Your Operations An with Technology Experience</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+            <img src="{% static 'website/img/all-images/blog/blog-img13.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#"> Ecommerce</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Empowering Your Business And Through Technology Tailored IT</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+              <img src="{% static 'website/img/all-images/blog/blog-img14.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#"> TeleCommunication</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Discover the Power of Data-Driven Insights Transforming</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+            <img src="{% static 'website/img/all-images/blog/blog-img15.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#">Agriculture</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Scalable IT solutions tailored to meet a unique business needs</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-6">
+        <div class="vl-blog-1-item">
+           <div class="vl-blog-1-thumb image-anime">
+            <img src="{% static 'website/img/all-images/blog/blog-img16.png' %}" alt="">
+           </div>
+           <div class="vl-blog-1-content">
+            <div class="vl-blog-meta">
+               <ul>
+                <li><a href="#">Education</a></li>
+               </ul>
+            </div>
+            <div class="space16"></div>
+            <h4 class="vl-blog-1-title"><a href="">Maximize Efficiency Minimize Risk With Expert Management</a></h4>
+            <div class="space20"></div>
+            <a href="" class="readmore">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+        </div>
+     </div>
+
+     {% comment %} <div class="col-lg-12">
+        <div class="space30"></div>
+        <div class="pagination-area">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">...</a></li>
+                  <li class="page-item"><a class="page-link" href="#">12</a></li>
+                  <li class="page-item">
+                    <a class="page-link m-0" href="#" aria-label="Next">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+    </div> {% endcomment %}
+     </div>
+  </div>
+</div>
+<!--===== BLOG AREA ENDS =======-->
+
+<script>
+
+const images = [
+  {
+    src: 'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/69aHNX9jkz3vnIvD5LDOhS/12a92e14a1f9dd8b5175ffb9447f549f/GettyImages-1322050853__1_.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000',
+    text: 'Learn Remote Programming Skills',
+    details: 'One of our most popular job categories and in-demand skills in the job market right now 💻 Find new and exciting remote full-stack programming and engineering job opportunities below!'
+  },
+  {
+    src: 'https://img.freepik.com/premium-photo/portrait-black-man-as-computer-programmer-looking-camera-while-writing-code-office-workplac_236854-44721.jpg',
+    text: 'Build Your Future with Code',
+    details: 'One of our most popular job categories and in-demand skills in the job market right now 💻 Find new and exciting remote full-stack programming and engineering job opportunities below!'
+  },
+  {
+    src: 'https://www.shutterstock.com/image-photo/authentic-office-enthusiastic-black-programmer-600nw-2079730702.jpg',
+    text: 'Start Your Journey as a Developer',
+    details: 'One of our most popular job categories and in-demand skills in the job market right now 💻 Find new and exciting remote full-stack programming and engineering job opportunities below!'
+  }
+];
+
+let current = 0;
+const viewer = document.getElementById('imgviewer');
+
+
+images.forEach((image, index) => {
+  const slide = document.createElement('div');
+  slide.className = 'slide';
+  if (index === current) slide.classList.add('active');
+
+  const img = document.createElement('img');
+  img.src = image.src;
+  img.alt = image.text;
+  img.className = 'img';
+
+  const title = document.createElement('div');
+  title.className = 'overlay-text';
+  title.textContent = image.text;
+
+  const description = document.createElement('div');
+  description.className = 'details';
+  description.textContent = image.details;
+
+  slide.appendChild(img);
+  slide.appendChild(title);
+  slide.appendChild(description);
+
+  viewer.appendChild(slide);
+});
+
+function showSlide(index) {
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+function nextSlide() {
+  current = (current + 1) % images.length;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + images.length) % images.length;
+  showSlide(current);
+}
+
+document.getElementById('nextBtn').addEventListener('click', nextSlide);
+document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+setInterval(nextSlide, 3000);
+
+</script>
+
+ <script>
+    const images1 = [
+      'https://cdn3.f-cdn.com/files/download/97941784/programmin.jpg?image-optimizer=force&format=webply&width=967',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFiYk6JPJFpHjRihmuaUD9cb-Bei9ucnto4w&s',
+      'https://imageio.forbes.com/specials-images/imageserve/6736f3d0b4198928f9696fc0/As-artificial-intelligence-enters-its-third-transformative-wave---agentic-AI-/960x0.jpg?format=jpg&width=960',
+      'https://www.shutterstock.com/image-photo/programmer-people-working-laptops-smartphones-600nw-2473384115.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD4aeh08YGijdx59J7qQmN8Rn9tipwNNl9RrIAUaNWf0d_p_7CEjxdC-x_k-edDEma3WM&usqp=CAU'
+    ];
+
+    const frames = document.getElementById('frames');
+    const newFrames = [];
+
+    let index = 0;
+
+    // Create all newFrames once (do not delete later)
+    images1.forEach((src, i) => {
+      const div = document.createElement('div');
+      div.className = 'frame';
+      const img = document.createElement('img');
+      img.src = src;
+      div.appendChild(img);
+      frames.appendChild(div);
+      newFrames.push(div);
+    });
+
+    function updatenewFrames() {
+      newFrames.forEach((frame, i) => {
+        frame.classList.remove('current-frame', 'next-frame','second-next', 'prev-frame','second-prev');
+
+        if (i === index) {
+          frame.classList.add('current-frame');
+        } else if (i === (index + 1) % newFrames.length) {
+          frame.classList.add('next-frame');
+        } else if (i === (index - 1 + newFrames.length) % newFrames.length) {
+          frame.classList.add('prev-frame');
+        }
+        else if(i===(index + 2) % newFrames.length){
+           frame.classList.add('second-next');
+        }
+         else if (i === (index - 2 + newFrames.length) % newFrames.length) {
+          frame.classList.add('second-prev');
+        }
+      });
+    }
+
+    function nextframe() {
+      index = (index + 1) % newFrames.length;
+      updatenewFrames();
+    }
+
+     updatenewFrames();
+    setInterval(nextframe, 3000);
+  </script>
+
+{% endblock content %}

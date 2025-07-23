@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>TECHSSOFT - Technology & It Solutions Services</title>
+
+     <!--=====FAB ICON=======-->
+    <link rel="shortcut icon" href="{% static 'website/img/logo/fav-logo1.png' %}" type="image/x-icon">
+
+    <!--===== CSS LINK =======-->
+    <link rel="stylesheet" href="{% static 'website/css/plugins/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/owlcarousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/slick-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/plugins/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}">
+
+    <!--=====  JS SCRIPT LINK =======-->
+    <script src="{% static 'website/js/plugins/jquery-3-7-1.min.js' %}"></script>
+</head>
+
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<style>
+  .autoslide {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .frames {
+    width: 100%;
+    height: 60vw;
+    max-height: 400px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .frame {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    transform: translate3d(0, 0, -200px);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    transition: transform 4s ease;
+  }
+
+  .frame-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 8px;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    z-index: 3;
+  }
+
+  .frame-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    z-index: 3;
+  }
+
+  .frame-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .frame-text p {
+    font-size: 14px;
+    margin: 3px 0 0;
+    opacity: 0.8;
+  }
+
+  .current-frame {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 13px 25px rgba(0, 0, 0, 0.3), 0 11px 7px rgba(0, 0, 0, 0.19);
+  }
+
+  .next-frame {
+    transform: translate3d(60%, 0, -50px);
+    opacity: 0.7;
+    z-index: 0;
+  }
+
+  .second-next {
+    transform: translate3d(100%, 0, -200px);
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .prev-frame {
+    transform: translate3d(-60%, 0, -50px);
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  .second-prev {
+    transform: translate3d(-100%, 0, -200px);
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+@media (min-width: 768px)  {
+    .frame {
+      width: 300px;
+      height:450px;
+    }
+   
+
+    .frame-text h4 {
+      font-size: 16px;
+    }
+
+    .frame-text p {
+      font-size: 12px;
+    }
+
+    .frame-icon {
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+
+    .next-frame {
+      transform: translate3d(50%, 0, -50px);
+    }
+
+    .prev-frame {
+      transform: translate3d(-50%, 0, -50px);
+    }
+  }
+  @media (max-width: 768px) {
+    .frame {
+      width: 40%;
+    }
+   
+
+    .frame-text h4 {
+      font-size: 16px;
+    }
+
+    .frame-text p {
+      font-size: 12px;
+    }
+
+    .frame-icon {
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+
+    .next-frame {
+      transform: translate3d(50%, 0, -50px);
+    }
+
+    .prev-frame {
+      transform: translate3d(-50%, 0, -50px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .frames {
+      height: 250px;
+    }
+
+    .frame-text {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .frame-text h4 {
+      font-size: 14px;
+    }
+
+    .frame-text p {
+      font-size: 11px;
+    }
+  }
+  @media (max-width: 320px) {
+    .frames {
+      height: 250px;
+      width: 350px;
+    }
+
+    .frame-text {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .frame-text h4 {
+      font-size: 14px;
+    }
+
+    .frame-text p {
+      font-size: 11px;
+    }
+  }
+</style>
+
+
+
+<body>
+  {% include 'website/header.html' %}
+{% block content %}
+
+{% endblock content %}
+
+{% include 'website/footer.html' %}
+
+<!--===== JS SCRIPT LINK =======-->
+<script src="{% static 'website/js/plugins/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/plugins/fontawesome.js' %}"></script>
+<script src="{% static 'website/js/plugins/aos.js' %}"></script>
+<script src="{% static 'website/js/plugins/counter.js' %}"></script>
+<script src="{% static 'website/js/plugins/gsap.min.js' %}"></script>
+<script src="{% static 'website/js/plugins/ScrollTrigger.min.js' %}"></script>
+<script src="{% static 'website/js/plugins/Splitetext.js' %}"></script>
+<script src="{% static 'website/js/plugins/SmoothScroll.js' %}"></script>
+<script src="{% static 'website/js/plugins/sidebar.js' %}"></script>
+<script src="{% static 'website/js/plugins/magnific-popup.js' %}"></script>
+<script src="{% static 'website/js/plugins/mobilemenu.js' %}"></script>
+<script src="{% static 'website/js/plugins/owlcarousel.min.js' %}"></script>
+<script src="{% static 'website/js/plugins/nice-select.js' %}"></script>
+<script src="{% static 'website/js/plugins/waypoints.js' %}"></script>
+<script src="{% static 'website/js/plugins/slick-slider.js' %}"></script>
+<script src="{% static 'website/js/plugins/circle-progress.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+
+
+
+
+  
+<!--===== Industries Slide Card =======-->
+<script>
+  const images1 = [
+    {
+      src: '{% static "website/img/Textiles.jpg" %}',
+      title: 'Textiles Industries',
+      subtitle: 'Smart Textile Solutions'
+    },
+    {
+      src: '{% static "website/img/healthcare.webp" %}',
+      title: 'Healthcare Industries',
+      subtitle: 'Smart Health Systems'
+    },
+    {
+      src: '{% static "website/img/banking-finance.jpg" %}',
+      title: 'Banking & Finance',
+      subtitle: 'Digital Finance Era'
+    },
+    {
+      src: '{% static "website/img/gasoil.jpg" %}',
+      title: 'Oil & Gas',
+      subtitle: 'Energy Tech Solutions'
+    },
+    {
+      src: '{% static "website/img/automotive-industry.webp" %}',
+      title: 'AutoMotive',
+      subtitle: 'Smart Mobility Tech'
+    },
+    {
+      src: '{% static "website/img/ecommerce.png" %}',
+      title: 'Ecommerce',
+      subtitle: 'Smart Shopping Tech'
+    }
+  ];
+
+  const frames = document.getElementById('frames');
+  const newFrames = [];
+  let index = 0;
+
+  // Create all frames
+  images1.forEach((item) => {
+    const div = document.createElement('div');
+    div.className = 'frame';
+
+    const img = document.createElement('img');
+    img.src = item.src;
+
+    const icon = document.createElement('div');
+    icon.className = 'frame-icon';
+    icon.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+
+    const textContainer = document.createElement('div');
+    textContainer.className = 'frame-text';
+
+    const title = document.createElement('h4');
+    title.textContent = item.title;
+
+    const subtitle = document.createElement('p');
+    subtitle.textContent = item.subtitle;
+
+    textContainer.appendChild(title);
+    textContainer.appendChild(subtitle);
+    div.appendChild(img);
+    div.appendChild(icon);
+    div.appendChild(textContainer);
+
+    frames.appendChild(div);
+    newFrames.push(div);
+  });
+
+  function updatenewFrames() {
+    newFrames.forEach((frame, i) => {
+      frame.classList.remove(
+        'current-frame',
+        'next-frame',
+        'second-next',
+        'prev-frame',
+        'second-prev'
+      );
+
+      if (i === index) {
+        frame.classList.add('current-frame');
+      } else if (i === (index + 1) % newFrames.length) {
+        frame.classList.add('next-frame');
+      } else if (i === (index - 1 + newFrames.length) % newFrames.length) {
+        frame.classList.add('prev-frame');
+      } else if (i === (index + 2) % newFrames.length) {
+        frame.classList.add('second-next');
+      } else if (i === (index - 2 + newFrames.length) % newFrames.length) {
+        frame.classList.add('second-prev');
+      }
+    });
+  }
+
+  function nextframe() {
+    index = (index + 1) % newFrames.length;
+    updatenewFrames();
+  }
+
+  updatenewFrames();
+  setInterval(nextframe, 3000);
+</script>
+
+</body>
+
+</html>

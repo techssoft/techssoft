@@ -1,0 +1,248 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!--===== HERO AREA STARTS =======-->
+<div class="inner-page-hero-area" style="background-image: url({% static 'website/img/all-images/bg/hero-bg1.png' %}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <img src="{% static 'website/img/elements/elements5.png' %}" alt="" class="elements5">
+    <img src="{% static 'website/img/elements/elements4.png' %}" alt="" class="elements4">
+    <img src="{% static 'website/img/elements/elements1.png' %}" alt="" class="elements1 keyframe5">
+    <img src="{% static 'website/img/elements/elements16.png' %}" alt="" class="elements16">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 m-auto">
+                <div class="inner-header text-center heading1">
+                    <h1>Our Services</h1>
+                    <div class="space28"></div>
+                    <a href="{% url 'index' %}">Home <i class="fa-solid fa-angle-right"></i> <span>Our Services</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== SERVICE AREA STARTS =======-->
+<div class="service1-section-area sp2">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 m-auto">
+        <div class="service-header text-center heading2 space-margin60">
+          <h5><span><img src="{% static 'website/img/icons/sub-logo1.svg' %}" alt=""></span>Our Services</h5>
+          <div class="space24"></div>
+          <h2 class="text-anime-style-3">Expert IT Services Designed <br class="d-lg-block d-none"> To Elevate Your Business</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="800">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/SoftwareDevelopment.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'software_development' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'software_development' %}">Software Development</a>
+          <div class="space16"></div>
+          <p style="text-align: justify !important;">We develop custom software solutions to streamline operations and boost efficiency.
+From ERP and CRM systems to fully tailored applications, we bring your ideas to life.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="900">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon2.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'website_development' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'website_development' %}">Website Development</a>
+          <div class="space16"></div>
+          <p style="text-align: justify !important;">We create high-quality, interactive websites tailored to your business goals.
+Using the latest tech and agile methods, we deliver fast, responsive, and engaging sites.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon3.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'application_development' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'application_development' %}">Application Development</a>
+          <div class="space16"></div>
+          <p style="text-align: justify !important;">We build user-friendly, high-quality mobile apps tailored to your business needs.
+Our innovative and affordable solutions ensure seamless access for your customers.</p>
+          <div class="space24"></div>
+      
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1100">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon4.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'data_science' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'data_science' %}">Data Science</a>
+          <div class="space16"></div>
+          <p style="text-align: justify !important;">We transform complex data into clean, structured formats for seamless system integration.
+Our services enable smarter decisions, scalable analytics, and growth-driving insights.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1200">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon5.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'cybersecurity' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'cybersecurity' %}">Cyber Security</a>
+          <div class="space16"></div>
+          <p style="text-align: justify !important;">We safeguard your digital assets using advanced, AI-driven cyber security solutions.
+Partner with us to ensure complete, round-the-clock protection against evolving threats.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1300">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon6.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'artificial_intelligence' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'artificial_intelligence' %}">Artificial Intelligence </a>
+          <div class="space16"></div>
+          <p style="text-align: justify !important;">We build AI solutions that automate tasks, extract insights, and boost decision-making.
+From chatbots to predictive analytics, our tech transforms the way businesses operate.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--===== SERVICE AREA ENDS =======-->
+  
+<!--===== ABOUT AREA STARTS =======-->
+<div class="about6-section-area-widget sp1" style="background-image: url({% static 'website/img/all-images/bg/service-bg1.png' %}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="about6-header heading2 bg-heading">
+                    <h5><span><img src="{% static 'website/img/icons/sub-logo1.svg' %}" alt=""></span>our mission/vision</h5>
+                    <div class="space18"></div>
+                    <h2 class="text-anime-style-3">Driving Innovation: Our Mission Vision at Eitech</h2>
+                    <div class="space16"></div>
+                    <p data-aos="fade-left" data-aos-duration="900">At the of innovation, our cutting-edge IT solutions are designed transform your business ETech operations. </p>
+                    <div class="space24"></div>
+                    <div class="about-boxarea" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="icons">
+                            <img src="{% static 'website/img/icons/service-icon2.svg' %}" alt="">
+                        </div>
+                        <div class="content-area">
+                            <a href="">Network Infrastructure Solutions</a>
+                            <div class="space16"></div>
+                            <p>In today’s fast-paced world, technology is the backbone of success. Our comprehensive IT.</p>
+                        </div>
+                    </div>
+                    <div class="space24"></div>
+                    <div class="about-boxarea" data-aos="fade-left" data-aos-duration="1100">
+                        <div class="icons">
+                            <img src="{% static 'website/img/icons/service-icon5.svg' %}" alt="">
+                        </div>
+                        <div class="content-area">
+                            <a href="">Performance Tailored IT Services</a>
+                            <div class="space16"></div>
+                            <p>Our tailored IT services are crafted to meet your unique business needs, ensuring that.</p>
+                        </div>
+                    </div>
+                    <div class="space32"></div>
+                    <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
+                        <a href="{% url 'contact' %}" class="vl-btn2">See How We Can Help<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6">
+                <div class="images-area">
+                    <img src="{% static 'website/img/elements/elements27.png' %}" alt="" class="elements27">
+                    <div class="img1 image-anime reveal">
+                        <img src="{% static 'website/img/all-images/about/about-img13.png' %}" alt="">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="img1 image-anime reveal">
+                                <div class="space30"></div>
+                                <img src="{% static 'website/img/all-images/about/about-img14.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="img1 image-anime reveal">
+                                <div class="space30"></div>
+                                <img src="{% static 'website/img/all-images/about/about-img15.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== ABOUT AREA ENDS =======-->
+
+<!--===== CTA AREA STARTS =======-->
+<div class="cta1-section-area sp1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="cta-header heading1">
+          <h2 data-aos="fade-left" data-aos-duration="700">Transform Your IT Today-Speak with Our Experts!</h2>
+          <div class="space16"></div>
+          <p data-aos="fade-left" data-aos-duration="800">Ready to take your business to the next level with cutting-edge IT solutions? Our team is here to help you transform.</p>
+          <div class="space24"></div>
+          <form data-aos="fade-left" data-aos-duration="900">
+            <input type="text" placeholder="Email Address">
+            <button type="submit" class="vl-btn1">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-3"></div>
+      <div class="col-lg-4">
+        <div class="cta-images">
+          <img src="{% static 'website/img/elements/elements7.png' %}" alt="" class="elements7 keyframe5">
+          <div class="img1">
+            <img src="{% static 'website/img/all-images/cta/cta-img1.png' %}" alt="">
+          </div>
+          <ul class="aniamtion-key-1">
+            <li><a ><img src="{% static 'website/img/icons/check5.svg' %}" alt="">IT Solution Services</a></li>
+            <li><a ><img src="{% static 'website/img/icons/check5.svg' %}" alt="">Cyber Security Services</a></li>
+            <li><a ><img src="{% static 'website/img/icons/check5.svg' %}" alt="">Software Development</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== CTA AREA ENDS =======-->
+
+{% endblock content %}

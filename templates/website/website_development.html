@@ -1,0 +1,118 @@
+{% extends 'Website/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!--=====HEADER START=======-->
+ <header class="homepage1-body">
+  <div id="vl-header-sticky" class="vl-header-area vl-transparent-header" >
+      <div class="container headerfix" >
+          <div class="row align-items-center row-bg3" style="background: #050734;">
+              <div class="col-lg-2 col-md-6 col-6">
+                  <div class="vl-logo">
+                      <a href="{% url 'index' %}"><img src="{% static 'website/img/logo/logo1.png' %}" alt=""></a>
+                  </div>
+              </div>
+              <div class="col-lg-7 d-none d-lg-block">
+                  <div class="vl-main-menu text-center">
+                      <nav class="vl-mobile-menu-active">
+                          <ul>
+                              <li class="has-dropdown">
+                                  <a href="{% url 'index' %}">Home </a>
+                                  
+                              </li>
+                                <li>
+                                  <a href="{% url 'about' %}">About</a>
+                                </li>
+                            
+                              
+                              <li>
+                                <a href="{% url 'services' %}">Services </a>
+                                
+                              </li>
+                              <li>
+                                <a href="{% url 'industries' %}">Industries </a>
+                                
+                              </li>
+                              
+                            
+                             
+                              <li><a href="{% url 'contact' %}">Contact</a></li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-6">
+                  <div class="vl-hero-btn d-none d-lg-block text-end">
+                          <span class="vl-btn-wrap text-end">
+                            <a href="{% url 'contact' %}" class="vl-btn1">Login <i class="fa-solid fa-arrow-right"></i></a>
+                          </span>
+                  </div>
+                  <div class="vl-header-action-item d-block d-lg-none">
+                      <button type="button" class="vl-offcanvas-toggle">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                      </button>
+                   </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+ <!--=====HEADER END =======-->
+
+
+<!--===== SERVICE SIDE AREA STARTS =======-->
+<div class="service-sidebar-area sp1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="service2-widget-sidebar rightside">
+                  <div class="img1 reveal image-anime">
+                    <img src="{% static 'website/img/desktop_application.jpg' %}" style="height: 600px;" class="mt-3" alt="">
+                  </div>
+                  
+                  
+              
+                  
+                 
+                </div>
+              </div>
+
+            <div class="col-lg-6">
+                <div class="service2-widget-sidebar rightside">
+                 
+                  <div class="space32"></div>
+                  <h3>Website Development</h3>
+                  <div class="space20"></div>
+                  <p style="text-align: justify !important;">Web Designers at our company understand your unique business needs and deliver you a highly interactive website to give you an edge over your competitors. We use the latest tools and technologies to deliver high-quality and aesthetic websites with the help of our dedicated team, we implement flexible and agile methodologies with a continual engagement process with the client throughout the web designing process to deliver a website with interactive UI, lesser bounce rates, less loading time, and load handling and optimized website to help your business grow exponentially.</p>
+                  <div class="space14"></div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                      <ul class="list">
+                        <li><img src="{% static 'website/img/icons/check1.svg' %}" alt="">Static Website</li>
+                        <li><img src="{% static 'website/img/icons/check1.svg' %}" alt="">E-Commerce</li>
+                      </ul>
+                    </div>
+  
+                    <div class="col-lg-6 col-md-6">
+                      <ul class="list">
+                        <li><img src="{% static 'website/img/icons/check1.svg' %}" alt="">Dynamic Website</li>
+                      </ul>
+                    </div>
+                  </div>
+                 
+              
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--===== SERVICE SIDE AREA STARTS =======-->
+
+
+
+
+
+
+  {% endblock content %}

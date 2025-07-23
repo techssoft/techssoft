@@ -1,0 +1,605 @@
+{% extends 'Website/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .slider {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  margin: auto;
+}
+
+.imgviewer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+
+}
+
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.overlay-text {
+height:fit-content;
+  position: absolute;
+
+  left: 100px;
+  top: 38%;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.1s, transform 1s ease;
+}
+
+.slide.active .overlay-text,
+.slide.active .details {
+  opacity: 1;
+  transform: translateY(0);
+}
+.details{
+  height:fit-content;
+  position: absolute;
+max-width:30%;
+  left: 100px;
+  top: 49%;
+  color: white;
+  font-size: 25px;
+  font-weight: lighter;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.1s, transform 1.5s ease;
+
+}
+
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 10px;
+  color: #333;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 50%;
+
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Make slider height smaller on smaller screens */
+@media (max-width: 768px) {
+  .slider {
+    height: 60vh; /* less tall on tablets and phones */
+  }
+  
+  .overlay-text {
+    font-size: 20px;
+    left: 20px;
+    top: 30%;
+    padding: 8px 12px;
+  }
+  
+  .details {
+    font-size: 16px;
+    max-width: 80%;  /* wider for smaller screens */
+    left: 20px;
+    top: 45%;
+    padding: 8px 12px;
+  }
+  
+  .prev, .next {
+    font-size: 20px;
+    padding: 8px;
+  }
+}
+
+/* Even smaller for phones */
+@media (max-width: 480px) {
+  .slider {
+    height: 50vh;
+  }
+  
+  .overlay-text {
+    font-size: 16px;
+    left: 10px;
+    top: 25%;
+    padding: 6px 10px;
+  }
+  
+  .details {
+    font-size: 14px;
+    max-width: 90%;
+    left: 10px;
+    top: 40%;
+    padding: 6px 10px;
+  }
+  
+  .prev, .next {
+    font-size: 18px;
+    padding: 6px;
+  }
+}
+
+</style>
+
+
+
+
+
+
+<!--===== HERO AREA STARTS =======-->
+<div class="hero1-section-area" style="margin-top: -45px;">
+  <div class="slider">
+      <div class="imgviewer" id="imgviewer"></div>
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </div>
+
+    
+</div>
+<!--===== HERO AREA ENDS =======-->
+
+<!--===== ABOUT AREA STARTS =======-->
+
+
+<!--===== ABOUT AREA STARTS =======-->
+<div class="about1-section-area sp1">
+  <img src="{% static 'website/img/elements/elements9.png' %}" alt="" class="elements9">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="about-images-area">
+          <img src="{% static 'website/img/elements/elements10.png' %}" alt="" class="elements10">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+              <div class="img1 image-anime reveal">
+                <img src="{% static 'website/img/all-images/about/about-img1.png' %}" alt="">
+              </div>
+              <div class="space30 d-lg-none d-block"></div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="img1 image-anime reveal">
+                <img src="{% static 'website/img/all-images/about/about-img2.png' %}" alt="">
+              </div>
+              <div class="space30"></div>
+              <div class="img1 image-anime reveal">
+                <img src="{% static 'website/img/all-images/about/about-img3.png' %}" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="check-icons aniamtion-key-1">
+            <img src="{% static 'website/img/icons/check1.svg' %}" alt="">
+            <p>With 15+ years of experience
+              IT solution help community.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-1"></div>
+      <div class="col-lg-5">
+        <div class="about-header-area heading2">
+          <h5><span><img src="{% static 'website/img/icons/sub-logo1.svg' %}" alt=""></span>About Techssoft IT Solution</h5>
+          <div class="space24"></div>
+          <h2 class="text-anime-style-3">Empowering Your Bussiness With Techssoft IT Solutions</h2>
+          <div class="space16"></div>
+          <p data-aos="fade-left" data-aos-duration="800">At Techssoft, we understand that every business unique, which is why we offer customized IT solutions designed to meet.</p>
+          <div class="space28"></div>
+          <div class="row" data-aos="fade-left" data-aos-duration="900">
+            <div class="col-lg-6 col-md-6">
+              <div class="progresbar">
+                <div class="progressbar">
+                   <div class="circle" data-percent="96"><canvas width="80" height="80"></canvas>
+                       <div class="count">96%</div>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <h4>IT Services</h4>
+                  <div class="space8"></div>
+                  <p>Level Is High</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+              <div class="space28 d-md-none d-block"></div>
+              <div class="progresbar">
+                <div class="progressbar">
+                   <div class="circle" data-percent="97"><canvas width="80" height="80"></canvas>
+                       <div class="count">97%</div>
+                  </div>
+                </div>
+                <div class="content-area">
+                  <h4>AI Services</h4>
+                  <div class="space8"></div>
+                  <p>#1 Best Of Solution</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="space28"></div>
+          <div class="pera-box" data-aos="fade-left" data-aos-duration="1000">
+            <p>“The right IT Services done just support your on business-they transform it, at Techssoft, we believe.”</p>
+          </div>
+          <div class="space28"></div>
+          <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
+            <a href="{% url 'contact' %}" class="vl-btn2">See How We Can Help <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== ABOUT AREA ENDS =======-->
+
+<!--===== SERVICE AREA STARTS =======-->
+<div class="service1-section-area sp2" style="background-image: url({% static 'website/img/all-images/bg/service-bg1.png' %}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 m-auto">
+        <div class="service-header text-center heading2 space-margin60">
+          <h5><span><img src="{% static 'website/img/icons/sub-logo1.svg' %}" alt=""></span>Our Services</h5>
+          <div class="space24"></div>
+          <h2 class="text-anime-style-3">Expert IT Services Designed <br class="d-lg-block d-none"> To Elevate Your Business</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="800">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon1.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'software_development' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="">Software Development</a>
+          <div class="space16"></div>
+          <p>We develop custom software solutions to streamline operations and boost efficiency.
+From ERP and CRM systems to fully tailored applications, we bring your ideas to life.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="900">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon2.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'website_development' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="">Website Development</a>
+          <div class="space16"></div>
+          <p>We create high-quality, interactive websites tailored to your business goals.
+Using the latest tech and agile methods, we deliver fast, responsive, and engaging sites.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon3.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'application_development' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="">Application Development</a>
+          <div class="space16"></div>
+          <p>We build user-friendly, high-quality mobile apps tailored to your business needs.
+Our innovative and affordable solutions ensure seamless access for your customers.</p>
+          <div class="space24"></div>
+      
+        </div>
+      </div>
+
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1100">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon4.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'data_science' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'data_science' %}">Data Science</a>
+          <div class="space16"></div>
+          <p>We transform complex data into clean, structured formats for seamless system integration.
+Our services enable smarter decisions, scalable analytics, and growth-driving insights.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+
+      
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1200">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/service-icon5.svg' %}" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'cybersecurity' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'cybersecurity' %}">Cyber Security</a>
+          <div class="space16"></div>
+          <p>We safeguard your digital assets using advanced, AI-driven cyber security solutions.
+Partner with us to ensure complete, round-the-clock protection against evolving threats.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1300">
+        <div class="service1-boxarea">
+          <div class="icons">
+            <img src="{% static 'website/img/icons/ai.svg' %}" style="text:#fff;" alt="">
+          </div>
+          <div class="arrow">
+            <a href="{% url 'artificial_intelligence' %}"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="space24"></div>
+          <a href="{% url 'artificial_intelligence' %}">Artificial Intelligence </a>
+          <div class="space16"></div>
+          <p>We build AI solutions that automate tasks, extract insights, and boost decision-making.
+From chatbots to predictive analytics, our tech transforms the way businesses operate.</p>
+          <div class="space24"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== SERVICE AREA ENDS =======-->
+
+<!--===== WORK AREA STARTS =======-->
+<div class="work1-section-area sp1">
+  <img src="{% static 'website/img/elements/elements11.png' %}" alt="" class="elements9">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5">
+        <div class="solution-header heading2">
+          <h5><span><img src="{% static 'website/img/icons/sub-logo1.svg' %}" alt=""></span>best it solution</h5>
+          <div class="space24"></div>
+          <h2 class="text-anime-style-3">End-to-End IT Services for Growing Businesses</h2>
+          <div class="space16"></div>
+          <p data-aos="fade-left" data-aos-duration="800">We provide comprehensive, end-to-end IT services of designed to support businesses at stage of growing.</p>
+          <div class="space24"></div>
+          <div class="bg-progress" data-aos="fade-left" data-aos-duration="900">
+            <div class="progress-bar">
+              <label>Software Development <span>98%</span></label>
+              <div class="progress">
+                  <div class="progress-inner" style="width: 98%;"></div>
+              </div>
+          </div>
+      
+          <div class="progress-bar">
+              <label>Application Development <span>99%</span></label>
+              <div class="progress">
+                  <div class="progress-inner" style="width: 99%;"></div>
+              </div>
+          </div>
+      
+          <div class="progress-bar">
+              <label>Artificial Intelligence Services <span>99%</span></label>
+              <div class="progress">
+                  <div class="progress-inner" style="width: 99%;"></div>
+              </div>
+          </div>
+          </div>
+          <div class="space32"></div>
+          <div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+            <a href="{% url 'contact' %}" class="vl-btn2">Discover Our Solutions <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
+      <div class="col-lg-5">
+        <div class="soultions-images">
+          <img src="{% static 'website/img/elements/elements10.png' %}" alt="" class="elements10">
+          <div class="img1 reveal image-anime">
+            <img src="{% static 'website/img/all-images/work/work-img1.png' %}" alt="">
+          </div>
+          <div class="img2 reveal image-anime">
+            <img src="{% static 'website/img/all-images/work/work-img2.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== WORK AREA ENDS =======-->
+
+
+<!--===== Swiper Card Start =======-->
+<div class="case1-section-area sp1">
+  <div class="case-works-section-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="service-header text-center heading2 space-margin60">
+            <h5><span><img src="{% static 'website/img/icons/sub-logo1.svg' %}" alt=""></span>Induestries</h5>
+            <div class="space24"></div>
+            <h2 class="text-anime-style-3">Expert IT Services Designed <br class="d-lg-block d-none"> To Elevate Your Business</h2>
+          </div>
+          <div class="autoslide">
+            <div class="frames" id="frames"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--===== Swiper Card end =======-->
+
+
+
+
+
+
+
+
+<!--===== CTA AREA STARTS =======-->
+<div class="cta1-section-area sp1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="cta-header heading1">
+          <h2 data-aos="fade-left" data-aos-duration="700">Transform Your IT Today-Speak with Our Experts!</h2>
+          <div class="space16"></div>
+          <p data-aos="fade-left" data-aos-duration="800">Ready to take your business to the next level with cutting-edge IT solutions? Our team is here to help you transform.</p>
+          <div class="space24"></div>
+          <form data-aos="fade-left" data-aos-duration="900">
+            <input type="text" placeholder="Email Address">
+            <button type="submit" class="vl-btn1">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-3"></div>
+      <div class="col-lg-4">
+        <div class="cta-images">
+          <img src="{% static 'website/img/elements/elements7.png' %}" alt="" class="elements7 keyframe5">
+          <div class="img1">
+            <img src="{% static 'website/img/all-images/cta/cta-img1.png' %}" alt="">
+          </div>
+          <ul class="aniamtion-key-1">
+            <li><a ><img src="{% static 'website/img/icons/check5.svg' %}" alt="">IT Solution Services</a></li>
+            <li><a ><img src="{% static 'website/img/icons/check5.svg' %}" alt="">Cyber Security Services</a></li>
+            <li><a ><img src="{% static 'website/img/icons/check5.svg' %}" alt="">Software Development</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== CTA AREA ENDS =======-->
+
+
+
+<!--===== Industries Card =======-->
+<script>
+
+const images = [
+  {
+    src: '{% static "website/img/all-images/hero/main1.jpg" %}',
+    text: 'About Techssoft',
+    details: 'Techssoft is a leading provider of artificial intelligence solutions that cater to various industries such as healthcare, finance, retail, and manufacturing. Our mission is to revolutionize these industries by developing innovative AI algorithms and software solutions that enhance efficiency and productivity.'
+  },
+  {
+    src: '{% static "website/img/all-images/hero/main2.jpg" %}',
+    text: 'Expertise & Innovation',
+    details: 'We are constantly exploring new techniques and methodologies to provide innovative solutions for our clients. Our team consists of seasoned professionals with deep expertise in software development and artificial intelligence.'
+  },
+  {
+    src: '{% static "website/img/all-images/hero/main3.jpg" %}',
+    text: 'Resources',
+    details: 'Stay up to date with the latest AI trends and news by reading our blog. Our blog features content from the most prominent experts in the field.'
+  }
+];
+
+let current = 0;
+const viewer = document.getElementById('imgviewer');
+
+
+images.forEach((image, index) => {
+  const slide = document.createElement('div');
+  slide.className = 'slide';
+  if (index === current) slide.classList.add('active');
+
+  const img = document.createElement('img');
+  img.src = image.src;
+  img.alt = image.text;
+  img.className = 'img';
+
+  const title = document.createElement('div');
+  title.className = 'overlay-text';
+  title.textContent = image.text;
+
+  const description = document.createElement('div');
+  description.className = 'details';
+  description.textContent = image.details;
+  description.style.setProperty('text-align', 'justify', 'important');
+
+  slide.appendChild(img);
+  slide.appendChild(title);
+  slide.appendChild(description);
+
+  viewer.appendChild(slide);
+});
+
+function showSlide(index) {
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+function nextSlide() {
+  current = (current + 1) % images.length;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + images.length) % images.length;
+  showSlide(current);
+}
+
+document.getElementById('nextBtn').addEventListener('click', nextSlide);
+document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+setInterval(nextSlide, 3000);
+
+</script>
+
+{% endblock content %} 
